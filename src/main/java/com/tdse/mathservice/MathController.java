@@ -1,8 +1,5 @@
 package com.tdse.mathservice;
 
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,5 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class MathController {
 
     @GetMapping("/Tribonacci")
-    public Map<String, Object> Tribonacci(@RequestParam int value)
+    public String Tribonacci(@RequestParam int value){
+        long a = 0, b = 0, c = 1;
+        String result = "0,0,1";
+        for (int i = 3; i <= value; i++){
+            long next = a+b+c;
+            result += next;
+            a = b; b = c; c = next;
+        }
+        return result;
+    }
 }
