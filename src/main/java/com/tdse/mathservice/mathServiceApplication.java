@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class mathServiceApplication {
     public static void main(String[] args){
-        SpringApplication.run(MathServiceApplication.class, args);
+        SpringApplication.run(mathServiceApplication.class, args);
 
     }
 }
